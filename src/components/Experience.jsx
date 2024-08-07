@@ -16,6 +16,8 @@ export const Experience = (props) => {
   const { section, menuOpened } = props;
   const { viewport } = useThree();
 
+  console.log(section);
+
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
 
@@ -49,10 +51,10 @@ export const Experience = (props) => {
 
       {/* SKILLS */}
       <motion.group
-        position={[0, -1.5, -10]}
+        position={[0, 1.5, -10]}
         animate={{
           z: section === 1 ? 0 : -10,
-          y: section === 1 ? -viewport.height : -1.5,
+          y: section === 1 ? -viewport.height : section === 3 ? (-viewport.height * 3) : -1.5,
         }}
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
@@ -93,7 +95,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
         <group scale={[2, 2, 2]} position-y={-1.3} position-x={-0.3}>
-          <Avatar animation={section === 0 ? "Falling" : "Standing"} />
+          <Avatar animation={section === 0 ? "Falling" : section === 3 ? "Falling" : "Standing"} />
         </group>
       </motion.group>
     </>

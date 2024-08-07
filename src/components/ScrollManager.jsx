@@ -42,6 +42,12 @@ export const ScrollManager = (props) => {
     ) {
       onSectionChange(0);
     }
+    if (
+      data.scroll.current < lastScroll.current &&
+      data.scroll.current < 1 / (data.pages - 3)
+    ) {
+      onSectionChange(3);
+    }
     lastScroll.current = data.scroll.current;
   });
 

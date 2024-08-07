@@ -24,13 +24,22 @@ export function Avatar(props) {
   const { animations: fallingAnimation } = useFBX(
     "animations/Falling Idle.fbx"
   );
+  const { animations: wavingAnimation } = useFBX(
+    "animations/Waving Gesture.fbx"
+  );
 
   typingAnimation[0].name = "Typing";
   standingAnimation[0].name = "Standing";
   fallingAnimation[0].name = "Falling";
+  wavingAnimation[0].name = "Waving";
 
   const { actions } = useAnimations(
-    [typingAnimation[0], standingAnimation[0], fallingAnimation[0]],
+    [
+      typingAnimation[0],
+      standingAnimation[0],
+      fallingAnimation[0],
+      wavingAnimation[0],
+    ],
     group
   );
 
