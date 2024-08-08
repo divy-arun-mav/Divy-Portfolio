@@ -29,7 +29,44 @@ export const Interface = () => {
   );
 };
 
-// ProjectsSection Component
+const projects = [
+  {
+    url: '/projects/text-recog.png',
+    about: "Hand written text recognition using keras tensorflow and using IAM's Handwritten text dataset",
+    domain: 'Machine Learning'
+  },
+  {
+    url: '/projects/evidence-management.png',
+    about: "Evidence Management system using blockchain is a robust system that can be used to store the complaints registered by users without revealing their actual id",
+    domain: 'Blockchain'
+  },
+  {
+    url: '/projects/chatbot.png',
+    about: "Simple chatbot using gemini api and ollama(llama3 for text and llava for image analysis)",
+    domain: 'GenAI'
+  },
+  {
+    url: '/projects/manage.png',
+    about: "A Jewellery store management app that can be used to manage an entire jewellery business let it be smallscale or largescale.",
+    domain: 'Full-Stack'
+  },
+  {
+    url: '/projects/ipl-score-prediction.png',
+    about: "IPL match score prediction by using keras and tensorflow and data from 2016.",
+    domain: 'Machine Learning'
+  },
+  {
+    url: '/projects/handgesture.gif',
+    about: "Controlling the volume of the pc using handgestures using opencv and mediapipe.",
+    domain: 'Computer Vision'
+  },
+  {
+    url: '/projects/instagram.png',
+    about: "Full Stack Instagram clone using React for frontend , noedjs for backend and mongodb for database",
+    domain: 'Full-Stack'
+  }
+]
+
 const ProjectsSection = () => {
   const settings = {
     dots: true,
@@ -71,27 +108,27 @@ const ProjectsSection = () => {
     <Section>
       <h1 className="text-5xl font-bold my-10">Projects</h1>
         <Slider {...settings} style={{ width:"99%",maxHeight: "90vh" }}>
-        <div className='flex justify-center items-center flex-col mx-2 p-2'><Card /></div>
-        <div className='flex justify-center items-center flex-col mx-2 p-2'><Card /></div>
-        <div className='flex justify-center items-center flex-col mx-2 p-2'><Card /></div>
-        <div className='flex justify-center items-center flex-col mx-2 p-2'><Card/></div>
+        {projects.map((project, index) => (
+          <div key={index} className='flex justify-center items-center flex-col mx-2 p-2'><Card project={project} /></div>
+        ))}
         </Slider>
     </Section>
   );
 };
 
-// Card Component
-const Card = () => {
+const Card = (project) => {
   return (
-    <div className="w-full rounded-xl bg-white p-2 flex justify-center items-center flex-col">
-      <img
-        className="w-full rounded-xl"
-        src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/tsah7c9evnal289z5fig/IMG%20Worlds%20of%20Adventure%20Admission%20Ticket%20in%20Dubai%20-%20Klook.jpg"
-        alt=""
-      />
-      <p>EduManager an app to manage entire university</p>
-      <p>Web Development</p>
-    </div>
+      <div className="w-full rounded-xl h-96 bg-white p-2 flex justify-between items-center flex-col">
+        <img
+          className="w-full max-w-8/12 h-60 rounded-xl"
+        src={project.project.url}
+          alt=""
+        />
+      <div className='flex justify-end items-center flex-col'>
+        <p>{project.project.about}</p>
+        <p className='font-bold'>{project.project.domain}</p>
+      </div>
+      </div>
   );
 };
 
@@ -229,9 +266,9 @@ const ContactSection = () => {
       <div className="p-8 w-96 w-full flex justify-center items-center flex-col md:flex-row">
       <h2 className="text-5xl font-bold">Contact me :</h2>
         <div className='flex justify-center items-center'>
-          <img src="/icons/instagram.svg" className='w-2/12 mx-2' alt="" srcset="" />
-          <img src="/icons/whatsapp-circle.svg" className='w-2/12 mx-2' alt="" srcset="" />
-          <img src="/icons/gmail.svg" className='w-2/12 mx-2' alt="" srcset="" />
+          <a href="https://www.linkedin.com/in/divy-mav-7b82b0249/?originalSubdomain=in"><img src="/icons/linkedin.svg" className='w-2/12' alt="" srcset="" /></a>
+          <a href="https://mail.google.com/mail/u/0/?fs=1&to=divymav5@gmail.com&tf=cm"><img src="/icons/gmail.svg" alt="" srcset="" /></a>
+          <a href=''><img src="/icons/whatsapp-circle.svg" className='' alt="" srcset="" /></a>
         </div>
       </div>
     </Section>
