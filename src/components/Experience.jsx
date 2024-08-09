@@ -10,7 +10,6 @@ import { useEffect } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
-import { Model } from "../MyModel";
 
 export const Experience = (props) => {
   const { section, menuOpened } = props;

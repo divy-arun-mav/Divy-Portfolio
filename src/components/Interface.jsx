@@ -265,10 +265,10 @@ const ContactSection = () => {
     <Section>
       <div className="p-8 w-96 w-full flex justify-center items-center flex-col md:flex-row">
       <h2 className="text-5xl font-bold">Contact me :</h2>
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-start items-center'>
           <a href="https://www.linkedin.com/in/divy-mav-7b82b0249/?originalSubdomain=in"><img src="/icons/linkedin.svg" className='w-2/12' alt="" srcset="" /></a>
           <a href="https://mail.google.com/mail/u/0/?fs=1&to=divymav5@gmail.com&tf=cm"><img src="/icons/gmail.svg" alt="" srcset="" /></a>
-          <a href=''><img src="/icons/whatsapp-circle.svg" className='' alt="" srcset="" /></a>
+          <a href='https://mail.google.com/mail/u/0/?fs=1&to=divymav5@gmail.com&tf=cm'><img src="/icons/whatsapp-circle.svg" className='w-4/12' alt="" srcset="" /></a>
         </div>
       </div>
     </Section>
